@@ -8,9 +8,6 @@ There are 3 ways to get the data into your Home Assistant:
 The first one is the easier way if you already have MQTT in use.
 
 ## Using MQTT (Automatically Setup Entities using Home Assistant MQTT Discovery)
-
-:bangbang: This feature will be available with the next release!
-
 Starting with Version `>12.0.1`, AI-on-the-edge-devices support Home Assistant Discovery.
 
  1. Check [here](https://www.home-assistant.io/integrations/mqtt/#mqtt-discovery) to learn more about it and how to enable it in Homeassistant.
@@ -175,6 +172,7 @@ This would return:
 To do such a REST call, you need to create a REST sensor:
 ```yaml
 sensor:
+
 - platform: rest
   name: "Gasmeter JSON" 
   resource: http://<IP>/json
@@ -194,14 +192,30 @@ template:
 
   - name: "Watermeter Value from JSON"
     unique_id: water_meter_value_from_json
-     state: >-
+    state: >-
             {{ state_attr('sensor.watermeter_json','main')['value'] | float }}
-     unit_of_measurement: 'm³'
-     device_class: water
-     state_class: total_increasing
-     icon: mdi:gauge
+    unit_of_measurement: 'm³'
+    device_class: water
+    state_class: total_increasing
+    icon: mdi:gauge
 
 ```
+
+The 2nd way is to use the html api call from value.html : 
+
+```
+sensor:
+- platform: rest
+  resource: http://<IP>/value.html
+  name: cold_water 
+  unique_id: cold_water_from_rest
+  unit_of_measurement: "L"
+  device_class: water
+  state_class: total_increasing
+  icon: mdi:gauge
+  scan_interval : 120
+ ```
+ 
 See also https://community.home-assistant.io/t/rest-sensor-nested-json/243420/9
 
 

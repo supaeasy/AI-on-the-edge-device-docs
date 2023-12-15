@@ -1,10 +1,10 @@
 # Parameter `InitialMirror`
 Default Value: `false`
 
-
-
+!!! Warning
+    This is an **Expert Parameter**! Only change it if you understand what it does!
+    
 !!! Note
-    This parameter is not accessible through the Web Interface Configuration Page!
+    This parameter can also be set on the Reference Image configuration.
 
-Please fill me with an explanation and useful links
-
+Option for initially mirroring the image on the original x-axis.

@@ -6,36 +6,44 @@ To use it, just append them to the IP, separated with a `/`, e.g. `http://192.16
 Note: For more detailed information to the REST handler, have a look to the code in the repository: [registered handlers](https://github.com/jomjol/AI-on-the-edge-device/search?q=camuri.uri)
 
 ## Control
-* ### flow_start
+### flow_start
   Trigger a flow start (if not running)
+     + Payload:
+        - No payload needed
   
-* ### Set Pre Value
-  Set the Previous Value
-  
-  `/setPreValue?value=1234&numbers=main` where `1234` is the new value and `main` the name of the number to be adjusted.
+ 
+### setPreValue
+  Set the last valid value (previous value) to given value or the actual RAW value.
+     + Payload:
+        - Set to given value (value >= 0), e.g. `/setPreValue?numbers=main&value=1234.5678`  
+           * `numbers=` Provide name of number sequence, e.g. main
+           * `value=` provide the value to be set
+    
+        - Set to actual RAW value (value < 0, a valid RAW value is mandatory), e.g. `/setPreValue?numbers=main&value=-1`
+           * `numbers=` Provide name of number sequence, e.g. main
+           * `value=` provide yna negative number
 
-* ### GPIO
-  - Control a GPIO output
-    - The `GPIO` entrypoint also support parameters:
-      - `/GPIO?GPIO={PinNumber}&Status=high`
-      - `/GPIO?GPIO={PinNumber}&Status=low`
-    - Example: `/GPIO?GPIO=12&Status=high`
+### GPIO
+   - Control a GPIO output
+     - The `GPIO` entrypoint also support parameters:
+       - `/GPIO?GPIO={PinNumber}&Status=high`
+       - `/GPIO?GPIO={PinNumber}&Status=low`
+     - Example: `/GPIO?GPIO=12&Status=high`
 
-  - Read a GPIO input 
-    - The `GPIO` entrypoint also support parameters:
-      - `/GPIO?GPIO={PinNumber}`
-    - Example: `/GPIO?GPIO=12`
+   - Read a GPIO input 
+     - The `GPIO` entrypoint also support parameters:
+       - `/GPIO?GPIO={PinNumber}`
+     - Example: `/GPIO?GPIO=12`
 
-* ### ota
-
-* ### ota_page.html
-  Opens the Over-The-Air update html page
-
-* ### reboot
+### reboot
   Trigger a reboot of the device
 
+### mqtt_publish_discovery
+  Trigger re-sending of the Home Assistant discovery topics.
+  The topics will get send at the end of the next round.
+  
 ## Results
-* ### json
+### json
   Show result in JSON syntax
   - Example: 
   `{
@@ -50,7 +58,7 @@ Note: For more detailed information to the REST handler, have a look to the code
     }
   }`
 
-* ### value
+### value
   Show single result values
   - The `value` entrypoint also support parameters:
    - `http://<IP>/value?all=true&type=value`
@@ -58,69 +66,69 @@ Note: For more detailed information to the REST handler, have a look to the code
    - `http://<IP>/value?all=true&type=error`
    - `http://<IP>/value?all=true&type=prevalue`
 
-* ### img_tmp/raw.jpg
+### img_tmp/raw.jpg
   Capture and show a new raw image
 
-* ### img_tmp/alg.jpg
+### img_tmp/alg.jpg
   Show last aligned image
 
-* ### img_tmp/alg_roi.jpg
+### img_tmp/alg_roi.jpg
   Show last aligned image including ROI overlay
 
 ## Status
-* ### statusflow
+### statusflow
   Show the actual step of the flow incl. timestamp
   - Example: `Take Image (15:56:34)`
 
-* ### rssi
+### rssi
   Show the WIFI signal strength (Unit: dBm)
   - Example: `-51`
 
-* ### cpu_temperature
+### cpu_temperature
   Show the CPU temperature (Unit: °C)
   - Example: `38`
 
-* ### sysinfo
+### sysinfo
   Show system infos in JSON syntax
   - Example: `[{"firmware": "","buildtime": "2023-01-25 12:41","gitbranch": "HEAD","gittag": "","gitrevision": "af13c68+","html": "Development-Branch: HEAD (Commit: af13c68+)","cputemp": "64","hostname": "WaterMeterTest","IPv4": "192.168.xxx.xxx","freeHeapMem": "2818330"}]`
 
-* ### starttime
+### starttime
   Show starttime
   - Example: `20230113-154634`
 
-* ### uptime
+### uptime
   Show uptime
   - Example: `0d 00h 15m 50s`
 
 ## Camera
-* ### lighton
+### lighton
   Switch the camera flashlight on 
 
-* ### lightoff
+### lightoff
   Switch the camera flashlight off
 
-* ### capture
+### capture
   Capture a new image (without flashlight)
 
-* ### capture_with_flashlight
+### capture_with_flashlight
   Capture a new image with flashlight
 
-* ### save
+### save
   Save a new image to SD card
   - The `save` entrypoint also support parameters:
-   - `http://<IP>/save?filename=test.jpg&delay=1`
+   - `http://<IP>/save?filename=test.jpg&delay=1000`
 
 ## Logs
-* ### log 
+### log 
   Last part of todays log (last 80 kBytes))
 
-* ### logfileact 
+### logfileact 
   Full log of today
 
-* ### log.html
+### log.html
   Opens the log html page
 
 ## Diagnostics
-* ### heap
+### heap
   print relevant memory (heap) information
   - Example: `Heap info: Heap Total: 1888926 | SPI Free: 1827431 | SPI Larg Block: 1802240 | SPI Min Free: 758155 | Int Free: 61495 | Int Larg Block: 55296 | Int Min Free: 36427`

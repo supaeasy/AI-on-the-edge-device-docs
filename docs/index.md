@@ -15,7 +15,7 @@ Here this edge computing is brought into a practice-oriented example, where a AI
 - Web surface to administrate and control
 - OTA-Interface to update directly through the web interface
 - Full integration into Home Assistant
-- Support for Influx DB 1
+- Support for Influx DB 1 and 2
 - MQTT
 - REST API
 
@@ -51,3 +51,15 @@ The task to be demonstrated here is an automated readout of an analog water mete
 There are two types of CNN implemented, a classification network for reading the digital numbers and a single output network for digitalize the analog pointers for the sub digit readings.
 
 This project is an evolution of the [water-meter-system-complete](https://github.com/jomjol/water-meter-system-complete), which uses ESP32-CAM just for taking the image and a 1GB-Docker image to run the neural network's backbone. Here everything is integrated in an ESP32-CAM module with 8MB of RAM and a SD card as data storage.
+
+# Additional Tutorials
+A lot of people created useful Youtube videos which might help you getting started.
+Here a small selection:
+
+- [youtube.com/watch?v=HKBofb1cnNc](https://www.youtube.com/watch?v=HKBofb1cnNc)
+- [youtube.com/watch?v=yyf0ORNLCk4](https://www.youtube.com/watch?v=yyf0ORNLCk4)
+- [youtube.com/watch?v=XxmTubGek6M](https://www.youtube.com/watch?v=XxmTubGek6M)
+- [youtube.com/watch?v=mDIJEyElkAU](https://www.youtube.com/watch?v=mDIJEyElkAU)
+- [youtube.com/watch?v=SssiPkyKVVs](https://www.youtube.com/watch?v=SssiPkyKVVs)
+- [youtube.com/watch?v=MAHE_QyHZFQ](https://www.youtube.com/watch?v=MAHE_QyHZFQ)
+- [youtube.com/watch?v=Uap_6bwtILQ](https://www.youtube.com/watch?v=Uap_6bwtILQ)

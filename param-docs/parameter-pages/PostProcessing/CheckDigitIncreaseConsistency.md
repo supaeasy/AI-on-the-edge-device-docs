@@ -6,4 +6,3 @@ Default Value: `false`
 
 An additional consistency check.
 It especially improves the zero crossing check between digits.
-

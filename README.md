@@ -1,4 +1,6 @@
-# User Documentation for the AI on the Edge Device Project
+# Documentation for the AI on the Edge Device Project
+
+Go to https://jomjol.github.io/AI-on-the-edge-device-docs to use it.
  
 This repo contains the documentation for the [AI-on-the-Edge-Device Project](https://github.com/jomjol/AI-on-the-edge-device).
 
@@ -6,17 +8,6 @@ This repo contains the documentation for the [AI-on-the-Edge-Device Project](htt
 1. You can edit any `*.md` document in the [docs](docs) folder.
 1. Then create a Pull Request for it to merge it into the `main` branch (or edit it directly in the `main` branch if you have the required rights).
 1. When it got merged, the [Github Actions](https://github.com/jomjol/AI-on-the-edge-device-docs/actions) will re-generate the documentation and place it in the `gh-pages` branch. This branch automatically gets populated to the public [Documentation Site](https://jomjol.github.io/AI-on-the-edge-device-docs)
-
-## Migrating existing Wiki Pages
-The files from the [AI-on-the-Edge-Device Wiki](https://github.com/jomjol/AI-on-the-edge-device/wiki) got exported and added to this repo. Unless the files are listed in the [docs/nav.yml](docs/nav.yml) file, they will be listed in the **assorted pages** section of the left sidebar.
-
-In the end, we should review all pages from there step by step and add them to the upper part of the navigation.
-
-### Tasks to do
- - Make sure there is a top level title (#) and all other chapter headers are on lower levels (##, ###)
- - Check the links in the documents
- - Fetch included images and place them directly in the [docs/img](docs/img) folder
- - Rewrite to have a clear structure
 
 ## Editing a page
 Each page has a link on its top-right corner `Edit on GitHub` which brings you directly to the Github editor.
@@ -34,7 +25,7 @@ The script `concat-parameter-pages.py` in `param-docs` should be run whenever on
 It then concatenates all pages into the single `../docs/Parameters.md` which gets be added to the `mkdocs` documentation.
 
 ### Template Generator
-The script `param-docs/generate-param-doc-pages.py` should be run whenever a new parameter gets added to the config file.
+The script `generate-template-param-doc-pages.py` should be run whenever a new parameter gets added to the config file.
 It then checks if there is already page for each of the parameters.
  - If no page exists yet, a templated page gets generated.
  - Existing pages do not get modified.

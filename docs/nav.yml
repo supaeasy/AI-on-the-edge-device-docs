@@ -11,38 +11,42 @@ nav:
     - Best-Practice.md
     - FAQs.md
 
-  - External Links:
-    - Releases: https://github.com/jomjol/AI-on-the-edge-device/releases
-    - Web Installer/Console: https://jomjol.github.io/AI-on-the-edge-device/index.html
-    - Place an Issue: https://github.com/jomjol/AI-on-the-edge-device/issues
-    - Join a Discussion: https://github.com/jomjol/AI-on-the-edge-device/discussions
-
   - Configuration:
+    - Reference-Image.md
+    - Alignment.md
     - ROI-Configuration.md
+    - Configuration.md
     - Choosing-the-Model.md
-    - Neural-Network-Types.md
     - ota.md
-    - Parameters.md
 
   - Advanced:
+    - Parameters.md
     - Integration-Home-Assistant.md
     - External-LED.md
+    - data-logging.md
     - rolling-installation.md
-    - Configuration-Parameter-Details.md
-    - Configuration.md
     - Watermeter-specific-analog---digital-transition.md
     - collect-new-images.md
     - Learn-models-with-your-own-images.md
     - Correction Algorithm.md
+    - Neural-Network-Types.md
     - Additional-Information.md
     - New-Releases-Notification.md
 
   - Troubleshooting:
-    - Error-Codes.md
-    - Error-Debugging.md
-    - Frequent-Reboots.md
-    - Demo-Mode.md
+    - Reduced webinterface (error codes): Error-Codes.md
+    - Board status LED (blink codes): StatusLED-BlinkCodes.md
+    - WLAN disconnect reasons: WLAN-disconnect-reason.md
+    - Often observed issues: Error-Debugging.md
+    - Basic hardware/config issues: Frequent-Reboots.md
+    - Demo mode: Demo-Mode.md
 
+  - Quick Links:
+    - Releases: https://github.com/jomjol/AI-on-the-edge-device/releases
+    - Web Installer/Console: https://jomjol.github.io/AI-on-the-edge-device/index.html
+    - Create an Issue: https://github.com/jomjol/AI-on-the-edge-device/issues
+    - Join a Discussion: https://github.com/jomjol/AI-on-the-edge-device/discussions
+  
   - API's:
       - REST-API.md
       - MQTT-API.md
@@ -55,11 +59,8 @@ nav:
     - Testing.md
     - Release-creation.md
 
-
   - Old Pages (no longer maintained):
     - outdated--Integrated-Functions.md
-    - outdated--Gasmeter-Log-Downloader.md
-    - outdated--Migrate-Old-Config-To-New-Config.md
 
   - Assorted Pages:
     # List all pages which are not covered by above list

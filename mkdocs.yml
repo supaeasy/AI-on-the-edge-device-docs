@@ -5,14 +5,23 @@ repo_url: https://github.com/jomjol/AI-on-the-edge-device-docs
 edit_uri: https://github.com/jomjol/AI-on-the-edge-device-docs/edit/main/docs
 
 theme: 
-  name: readthedocs
-  custom_dir: readthedocs-mod/
+#  name: readthedocs
+#  custom_dir: readthedocs-mod/
+
+  name: material
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  palette:
+    primary: blue
 
 
 plugins:
-    - search
-    - awesome-pages:
-        filename: nav.yml
+  - search
+  - awesome-pages:
+      filename: nav.yml
+  - enumerate-headings:
+      increment_across_pages: false
+      toc_depth: 6
 
 # The navigation is configured in the docs/nav.yml file!
 
@@ -21,3 +30,4 @@ markdown_extensions:
   - pymdownx.emoji: # Emoji support
       emoji_generator: !!python/name:pymdownx.emoji.to_alt
   - markdown.extensions.admonition
+  - def_list
